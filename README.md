@@ -32,7 +32,7 @@ bilibgm-pro/
 │   ├── content/          # Content Script (悬浮按钮)
 │   ├── popup/            # Popup UI (React)
 │   │   ├── App.tsx       # 主应用组件
-│   │   ├── pages/        # 页面组件 (首页/任务/设置/关于)
+│   │   ├── MainPanel.tsx # 主面板 (流列表+下载)
 │   │   └── styles.css    # Tailwind + 自定义样式
 │   ├── options/          # 独立设置页
 │   ├── core/             # 核心业务逻辑
@@ -44,12 +44,10 @@ bilibgm-pro/
 │   │   └── taskManager.ts    # 任务管理
 │   ├── native/           # Native Messaging 通信
 │   └── types/            # TypeScript 类型定义
-├── native-host/          # 本地增强组件
-│   ├── src/index.ts      # Native Host 主程序
-│   ├── install-host.bat  # Windows 安装脚本
-│   └── uninstall-host.bat# Windows 卸载脚本
-└── scripts/
-    └── generate-icons.mjs # 图标生成脚本
+└── native-host/          # 本地增强组件
+    ├── src/index.ts      # Native Host 主程序
+    ├── install-host.bat  # Windows 安装脚本
+    └── uninstall-host.bat# Windows 卸载脚本
 ```
 
 ## 安装与使用
@@ -66,9 +64,6 @@ cd bilibgm-pro
 
 # 安装依赖
 npm install
-
-# 生成图标
-node scripts/generate-icons.mjs
 
 # 构建
 npm run build
