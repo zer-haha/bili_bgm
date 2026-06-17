@@ -1,0 +1,35 @@
+/* BiliBGM Pro Content Script Styles */
+#bilibgm-float-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 80px;
+  z-index: 99999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FB7299 0%, #E84D7A 100%);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(251, 114, 153, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+#bilibgm-float-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(251, 114, 153, 0.5);
+}
+#bilibgm-float-btn:active {
+  transform: scale(0.95);
+}
+#bilibgm-float-btn svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
+#bilibgm-float-btn.dragging {
+  transition: none;
+  opacity: 0.8;
+}

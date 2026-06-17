@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bili-pink: #FB7299;
+  --bili-pink-dark: #E84D7A;
+  --bili-pink-light: #FF9AB2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 420px;
+  height: 600px;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  overflow: hidden;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 dark:bg-[#0f0f1a] dark:text-gray-100;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+}
+
+/* 毛玻璃效果 */
+.glass {
+  @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl;
+}
+
+.glass-card {
+  @apply bg-white/60 dark:bg-gray-800/60 backdrop-blur-md border border-white/20 dark:border-gray-700/30;
+}
+
+/* B站粉色渐变 */
+.bili-gradient {
+  background: linear-gradient(135deg, #FB7299 0%, #E84D7A 100%);
+}
+
+.bili-gradient-text {
+  background: linear-gradient(135deg, #FB7299 0%, #E84D7A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 动画 */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.dark .skeleton {
+  background: linear-gradient(90deg, #1f1f3a 25%, #2a2a4a 50%, #1f1f3a 75%);
+  background-size: 200% 100%;
+}
+
+/* 进度条 */
+.progress-bar {
+  @apply h-1.5 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden;
+}
+
+.progress-bar-fill {
+  @apply h-full rounded-full bili-gradient transition-all duration-300;
+}
+
+/* 按钮样式 */
+.btn-primary {
+  @apply px-4 py-2 rounded-xl text-white font-medium text-sm
+         bili-gradient hover:opacity-90 active:scale-95
+         disabled:opacity-50 disabled:cursor-not-allowed
+         transition-all duration-200;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 rounded-xl text-sm font-medium
+         bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700
+         text-gray-700 dark:text-gray-300
+         disabled:opacity-50 disabled:cursor-not-allowed
+         transition-all duration-200 active:scale-95;
+}
+
+.btn-outline {
+  @apply px-4 py-2 rounded-xl text-sm font-medium
+         border border-bili-pink/30 text-bili-pink
+         hover:bg-bili-pink/10 dark:hover:bg-bili-pink/20
+         disabled:opacity-50 disabled:cursor-not-allowed
+         transition-all duration-200 active:scale-95;
+}
+
+/* 输入框 */
+.input-field {
+  @apply w-full px-3 py-2 rounded-lg text-sm
+         bg-gray-100 dark:bg-gray-800
+         border border-transparent
+         focus:border-bili-pink/50 focus:outline-none focus:ring-1 focus:ring-bili-pink/30
+         placeholder-gray-400 dark:placeholder-gray-500
+         transition-all duration-200;
+}
+
+/* 标签 */
+.tag {
+  @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium;
+}
+
+/* 导航 */
+.nav-item {
+  @apply flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-xl text-xs
+         text-gray-500 dark:text-gray-400
+         hover:text-bili-pink dark:hover:text-bili-pink-light
+         transition-all duration-200;
+}
+
+.nav-item.active {
+  @apply text-bili-pink dark:text-bili-pink-light;
+}
+
+/* 卡片 */
+.card {
+  @apply rounded-2xl overflow-hidden
+         bg-white dark:bg-gray-800/80
+         border border-gray-100 dark:border-gray-700/50
+         shadow-sm hover:shadow-md
+         transition-all duration-200;
+}
